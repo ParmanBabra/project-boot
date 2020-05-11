@@ -271,6 +271,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 601650511673908749, guid: 3d3e5a2e2d6e2304dbacde1e6ee48e85,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 601650511673908749, guid: 3d3e5a2e2d6e2304dbacde1e6ee48e85,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9205163012667881485, guid: 3d3e5a2e2d6e2304dbacde1e6ee48e85,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -333,24 +343,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d3e5a2e2d6e2304dbacde1e6ee48e85, type: 3}
---- !u!1 &1762040005 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9205163012667881486, guid: 3d3e5a2e2d6e2304dbacde1e6ee48e85,
-    type: 3}
-  m_PrefabInstance: {fileID: 1762040004}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1762040008
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1762040005}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5543e30eb332c344a82487710185b837, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &4417374998128536439
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -435,12 +427,12 @@ PrefabInstance:
     - target: {fileID: 6604391608721678439, guid: 101f734ad266bef40a4e3f2b02e6c8b2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.85
+      value: 0.174
       objectReference: {fileID: 0}
     - target: {fileID: 6604391608721678439, guid: 101f734ad266bef40a4e3f2b02e6c8b2,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 6604391608721678439, guid: 101f734ad266bef40a4e3f2b02e6c8b2,
         type: 3}
