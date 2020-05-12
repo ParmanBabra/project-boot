@@ -19,6 +19,8 @@ public class Rocket : MonoBehaviour
 
     public State state = State.Alive;
 
+    bool checkCollision = true;
+
     public enum State
     {
         Alive, Dying, Transcending
@@ -39,6 +41,9 @@ public class Rocket : MonoBehaviour
 
         ResponToThrustInput();
         ResponToRotateInput();
+
+        if (Debug.isDebugBuild)
+            ResponToDebugInput();
     }
 
     void OnCollisionEnter(Collision other)
@@ -57,6 +62,9 @@ public class Rocket : MonoBehaviour
                 Invoke("LoadNextScene", levelLoadDelay);
                 break;
             default:
+                if (!checkCollision)
+                    return;
+
                 this.state = State.Dying;
                 audioSource.Stop();
                 audioSource.PlayOneShot(death);
@@ -68,11 +76,32 @@ public class Rocket : MonoBehaviour
 
     private void LoadNextScene()
     {
-        SceneManager.LoadScene(1);
+        var currentLevel = SceneManager.GetActiveScene().buildIndex;
+        var nextSceneIndex = currentLevel + 1;
+
+        if (SceneManager.sceneCountInBuildSettings == nextSceneIndex)
+            nextSceneIndex = 0;
+            
+        SceneManager.LoadScene(nextSceneIndex);
     }
     private void LoadFirstScene()
     {
         SceneManager.LoadScene(0);
+    }
+
+    private void ResponToDebugInput()
+    {
+        if (Input.GetKeyUp(KeyCode.C))
+        {
+            checkCollision = !checkCollision;
+            print("Toggle Collision!!");
+        }
+
+        if (Input.GetKeyUp(KeyCode.L))
+        {
+            print("Load Next Level");
+            Invoke("LoadNextScene", levelLoadDelay);
+        }
     }
 
     private void ResponToRotateInput()
